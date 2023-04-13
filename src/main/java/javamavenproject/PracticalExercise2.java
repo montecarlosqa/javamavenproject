@@ -4,27 +4,25 @@ public class PracticalExercise2 {
 
     public static void main(String[] args) {
 
-        int array[] = {9, 1, 8, 2, 7, 3, 6, 5, 4};
-
-        insertionSort(array);
-
-        for(int i : array) {
-            System.out.print(i + " ");
-        }
-    }
-    
-    private static void insertionSort(int[] array) {
-
-        for(int i = 1; i < array.length; i++) {
-            int temp = array[i];
-            int j = i - 1;
-
-            while(j >= 0 && array[j] > temp) {
-                array[j + 1] = array[j];
-                j--;
-            }
-            array[j + 1] = temp;
-        }
+		int[] numbers = {5, 1, 4, 2, 8};
+		int length = numbers.length;
+	
+		
+		for(int i=0; i<length; i++) {
+			for(int j=1; j<length-i; j++) {
+				if(numbers[j-1] > numbers[j]) {
+					int temp = numbers[j];
+					numbers[j] = numbers[j-1];
+					numbers[j-1] = temp;
+					
+				}
+			}							
+		};
+		
+		System.out.print("Sorted array: " );
+		for(int i=0; i<length; i++) {
+			System.out.print(numbers[i] + " ");
+		}
     }
 
 }
